@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Merchandise &amp; Custom Gear Store • Intellectual Property Law Society</title>
+  <meta name="description"
+    content="Browse and order official Intellectual Property Law Society (IPLS) merchandise—speckled mugs, short glasses, mousepads, pint glasses, and padfolios with custom retro-tech IP logo designs." />
+
+  <link rel="icon" href="assets/images/icons/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Cormorant+Garamond:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <script src="assets/js/main.js" defer></script>
+</head>
+
+<body>
+  <!-- Top Navigation -->
+  <nav class="top-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">IPLS</a>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="documents.html">Documents &amp; Flyers</a></li>
+        <li><a href="moot-court.html">Moot Court</a></li>
+        <li><a href="ipsel.html">IPSEL Certificate</a></li>
+        <li><a href="constitution.html">Constitution</a></li>
+        <li><a href="merchandise.html" class="active">Merchandise</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Aurora Shimmer Overlay -->
+  <div class="aurora-shimmer"></div>
+
+  <!-- Banner -->
+  <header class="club-banner slide-up">
+    <div class="container">
+      <h1>IPLS Custom Merchandise Store</h1>
+      <h2>Fall 2026 Collection • Vendor Product Catalog &amp; Custom Order Listings</h2>
+    </div>
+  </header>
+
+  <!-- Main Store Layout -->
+  <main class="layout" style="flex-direction: column; max-width: 1200px;">
+    
+    <!-- Info & Ordering Guidelines Banner -->
+    <div class="merch-info-banner fade-in">
+      <h3>Vendor Custom Merchandise Ordering Information &amp; Terms</h3>
+      <p style="margin-bottom: 0.5rem;">Browse all custom IPLS merchandise listing photos below. Click any photo thumbnail to inspect zoomed-in high-resolution gallery views, inspect product specifications/details photos, choose logo designs, and select color preferences!</p>
+      <ul>
+        <li><strong>Interactive Photo Zoom &amp; Specs:</strong> Click any photo thumbnail or "View Specs &amp; Details" to pop up a full-screen zoomed-in view of logo mockups and item specification sheets.</li>
+        <li><strong>Padfolio Material &amp; Laser Engraving:</strong> Crafted from <strong>High Quality Vegan PU Leather</strong>. All Padfolio logos are produced as either <strong>Colorless Engraving</strong>, <strong>Silver Engraving</strong>, <strong>Golden Engraving</strong>, or <strong>Black Engraving</strong>. Purchasers must specify their preferred engraving color and custom name/text for the bottom right corner in the Custom Details section.</li>
+        <li><strong>Fulfillment Timeframe:</strong> Each custom batch order may take up to <strong>30 to 45 days</strong> to be fulfilled and received.</li>
+        <li><strong>Vendor Disclaimer:</strong> Custom items are crafted to order. Digital photo listings are visual mockups; minor color tone or graphic alignment variations may occur. If an item arrives defective or materially different, we will gladly replace or refund it.</li>
+        <li><strong>Full Refund Guarantee:</strong> If we are unable to fulfill your order request for any reason, a 100% full refund will be issued.</li>
+        <li><strong>Payment:</strong> Complete your order request by transferring the invoice total to Treasurer <strong>Danyelle Adamez</strong> on Venmo at <a href="https://venmo.com/u/Danyelle-Adamez" target="_blank" rel="noopener noreferrer" class="venmo-badge">@Danyelle-Adamez</a>.</li>
+      </ul>
+    </div>
+
+    <!-- Product Grid / Vendor Listings -->
+    <section class="fade-in">
+      <h2 style="font-family: 'Space Grotesk', sans-serif; color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; text-align: left; border-bottom: 2px solid rgba(108, 92, 231, 0.4); padding-bottom: 0.5rem;">
+        Official IPLS Custom Product Listings
+      </h2>
+
+      <div class="merch-grid" id="productGrid">
+        <!-- Vendor Product Cards with Photo Galleries generated dynamically via JS -->
+      </div>
+    </section>
+
+    <!-- Shopping Cart & Order Request Form -->
+    <section class="merch-order-section fade-in" id="orderSection">
+      <h2 style="font-family: 'Space Grotesk', sans-serif; color: #faab1f; font-size: 1.8rem; margin: 0 0 1rem 0; display: flex; align-items: center; justify-content: space-between;">
+        <span>Your Merchandise Order Request</span>
+        <span id="cartCountBadge" style="font-size: 0.9rem; background: rgba(108, 92, 231, 0.4); border: 1px solid #a29bfe; padding: 0.25rem 0.75rem; border-radius: 20px; color: #fff;">0 Items Selected</span>
+      </h2>
+
+      <!-- Cart Table -->
+      <div class="cart-table-wrapper">
+        <table class="cart-table" id="cartTable">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Color</th>
+              <th>Logo Design</th>
+              <th>Unit Price</th>
+              <th>Qty</th>
+              <th>Subtotal</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="cartTableBody">
+            <tr id="emptyCartRow">
+              <td colspan="7" style="text-align: center; color: #a29bfe; padding: 2rem 1rem;">
+                Your order request is currently empty. Click <strong>"Add to Order Request"</strong> on any item listing above!
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Order Total Summary -->
+      <div style="text-align: right; margin: 1rem 0; padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 0.6rem; border: 1px solid rgba(255,255,255,0.08);">
+        <p style="font-size: 1.3rem; font-weight: 700; color: #fff; margin: 0;">
+          Estimated Total Price: <span id="cartTotalDisplay" style="color: #faab1f;">$0.00</span>
+        </p>
+      </div>
+
+      <!-- Customer Details Form -->
+      <form id="merchOrderForm">
+        <h3 style="color: #b3a8ff; font-family: 'Space Grotesk', sans-serif; margin-top: 1.5rem; margin-bottom: 0.5rem;">
+          Requester Contact Information &amp; Custom Engraving Details
+        </h3>
+        
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="reqName">Full Name *</label>
+            <input type="text" id="reqName" required placeholder="e.g., Jane Doe" />
+          </div>
+
+          <div class="form-group">
+            <label for="reqEmail">Email Address *</label>
+            <input type="email" id="reqEmail" required placeholder="e.g., jdoe@my.okcu.edu" />
+          </div>
+
+          <div class="form-group">
+            <label for="reqPhone">Phone Number *</label>
+            <input type="tel" id="reqPhone" required placeholder="e.g., (405) 555-0199" />
+          </div>
+
+          <div class="form-group">
+            <label for="reqStatus">Affiliation / Status *</label>
+            <select id="reqStatus" required>
+              <option value="1L Student">1L Student</option>
+              <option value="2L Student">2L Student</option>
+              <option value="3L Student">3L Student</option>
+              <option value="OCU Law Faculty/Staff">OCU Law Faculty / Staff</option>
+              <option value="OCU Law Alumni">OCU Law Alumni</option>
+              <option value="Supporter / Guest">Supporter / Guest</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="reqDelivery">Pickup / Fulfillment Preference *</label>
+            <select id="reqDelivery" required>
+              <option value="On-Campus Pickup (OCU Law Building)">On-Campus Pickup at OCU Law</option>
+              <option value="Ship to Address (Shipping Fees May Apply)">Shipping Request</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="padfolioEngravingColor">Padfolio Engraving Color Choice (If Ordering Padfolio)</label>
+            <select id="padfolioEngravingColor">
+              <option value="N/A - No Padfolio Ordered">N/A - No Padfolio Ordered</option>
+              <option value="Colorless Engraving">Colorless Engraving</option>
+              <option value="Silver Engraving">Silver Engraving</option>
+              <option value="Golden Engraving">Golden Engraving</option>
+              <option value="Black Engraving">Black Engraving</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="grid-column: 1 / -1;">
+            <label for="reqNotes">Custom Details &amp; Bottom-Right Corner Text (Required for Padfolios: Name/Text &amp; Engraving Notes)</label>
+            <textarea id="reqNotes" rows="3" placeholder="For Padfolios: Specify engraving color + exact Name/Text wanted for the bottom right corner (e.g., 'Golden Engraving; Name: Jane Doe'). For other items: Add any custom requests or sizing notes..."></textarea>
+          </div>
+        </div>
+
+        <div class="terms-box">
+          <strong>Order Confirmation &amp; Payment Agreement:</strong><br />
+          By submitting this merchandise request offer, you acknowledge that orders are custom produced and may take up to <strong>30 to 45 days</strong> for delivery. Padfolios are engraved according to your specified color (Colorless, Silver, Golden, Black) and bottom-right corner text. If IPLS is unable to fulfill your order, you will receive a 100% full refund. Payment must be completed via Venmo to Treasurer <strong>Danyelle Adamez</strong>: <a href="https://venmo.com/u/Danyelle-Adamez" target="_blank" rel="noopener noreferrer" class="venmo-badge">@Danyelle-Adamez</a>.
+        </div>
+
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <button type="submit" class="btn" style="padding: 1rem 2.5rem; font-size: 1.1rem; border-radius: 30px; box-shadow: 0 6px 25px rgba(108, 92, 231, 0.5);">
+            Submit Merchandise Sale Offer &amp; Request Confirmation
+          </button>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Zoomed-In Lightbox Photo Gallery Modal -->
+  <div class="lightbox-overlay" id="lightboxModal">
+    <button class="lightbox-close" id="lightboxCloseBtn" title="Close Photo Viewer">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrevBtn" title="Previous Photo">&lsaquo;</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNextBtn" title="Next Photo">&rsaquo;</button>
+    
+    <div class="lightbox-container">
+      <img src="" alt="Zoomed Product View" class="lightbox-img" id="lightboxImg" />
+      <div class="lightbox-caption" id="lightboxCaption">Product Caption</div>
+    </div>
+  </div>
+
+  <!-- Confirmation Modal -->
+  <div class="modal-overlay" id="confirmModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Merchandise Order Offer Submitted!</h2>
+        <button class="modal-close" id="closeModalBtn">&times;</button>
+      </div>
+      
+      <div id="modalReceiptBody">
+        <!-- Populated via JavaScript -->
+      </div>
+
+      <div style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: flex-end;">
+        <button class="btn btn-outline" id="copyReceiptBtn">Copy Order &amp; Email Text</button>
+        <a id="triggerMailtoBtn" class="btn" href="#" target="_blank" style="text-decoration: none;">
+          Send Order Email to IPLS Board &amp; Self
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact & Newsletter -->
+  <section class="engage-section fade-in">
+    <div class="engage-container">
+      <div class="contact-form-box">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+      <div class="social-invitation-box">
+        <h2>Follow Us on Instagram</h2>
+        <p style="color: #d8dbff; line-height: 1.6; margin-bottom: 1rem;">
+          Stay connected with the Intellectual Property Law Society! Follow our official Instagram page for upcoming event announcements, merchandise drops, attorney panel highlights, meeting recaps, and behind-the-scenes OCU Law moments.
+        </p>
+        <div style="margin-top: auto; text-align: center;">
+          <a href="[INSERT INSTAGRAM LINK HERE]" target="_blank" rel="noopener noreferrer" class="btn-instagram">
+            Follow Us on Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>IPLS</h3>
+          <p>Intellectual Property Law Society<br>Oklahoma City University School of Law</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="documents.html">Documents &amp; Flyers</a></li>
+            <li><a href="moot-court.html">Moot Court</a></li>
+            <li><a href="ipsel.html">IPSEL Certificate</a></li>
+            <li><a href="constitution.html">Constitution</a></li>
+            <li><a href="merchandise.html">Merchandise</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="[INSERT INSTAGRAM LINK HERE]" target="_blank" rel="noopener noreferrer" class="social-icon" title="Follow Us on Instagram">IG</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Intellectual Property Law Society. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Inline Script for Merchandise & Lightbox Gallery Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Products Definition with exact Details Photo Paths
+      const PRODUCTS = [
+        {
+          id: 'speckled-mug',
+          name: 'Speckled Mug',
+          price: 20,
+          folder: 'assets/images/merch/Speckled Mug',
+          detailsPhoto: 'assets/images/merch/Speckled Mug/details.png',
+          colors: [
+            { name: 'Black', colorCode: '#18181b' },
+            { name: 'Blue', colorCode: '#1e3a8a' },
+            { name: 'Red', colorCode: '#991b1b' }
+          ],
+          defaultColor: 'Black'
+        },
+        {
+          id: 'short-glass',
+          name: 'Short Glass',
+          price: 15,
+          folder: 'assets/images/merch/Short Glass',
+          detailsPhoto: 'assets/images/merch/Short Glass/details.png',
+          colors: [
+            { name: 'Black', colorCode: '#18181b' },
+            { name: 'Blue', colorCode: '#1e3a8a' },
+            { name: 'Clear', colorCode: '#cbd5e1' }
+          ],
+          defaultColor: 'Black'
+        },
+        {
+          id: 'mousepad',
+          name: 'Mousepad',
+          price: 15,
+          folder: 'assets/images/merch/Mouse Pads',
+          detailsPhoto: 'assets/images/merch/Mouse Pads/details.jpg',
+          colors: [
+            { name: 'Black', colorCode: '#18181b' },
+            { name: 'Blue', colorCode: '#1e3a8a' },
+            { name: 'White', colorCode: '#f8fafc' }
+          ],
+          defaultColor: 'Black'
+        },
+        {
+          id: 'pint-glass',
+          name: 'Pint Glass',
+          price: 20,
+          folder: 'assets/images/merch/Pint Glass',
+          detailsPhoto: 'assets/images/merch/Pint Glass/details.jpg',
+          colors: [
+            { name: 'Black', colorCode: '#18181b' },
+            { name: 'Blue', colorCode: '#1e3a8a' },
+            { name: 'Clear', colorCode: '#cbd5e1' }
+          ],
+          defaultColor: 'Black'
+        },
+        {
+          id: 'padfolio',
+          name: 'Padfolio',
+          material: 'High Quality Vegan PU Leather',
+          price: 68,
+          folder: 'assets/images/merch/Padfolio/Budget',
+          detailsPhoto: 'assets/images/merch/Padfolio/details.jpg',
+          colors: [
+            { name: 'Black', colorCode: '#18181b' },
+            { name: 'Green', colorCode: '#14532d' },
+            { name: 'Brown', colorCode: '#78350f' }
+          ],
+          defaultColor: 'Black',
+          isEngraved: true
+        }
+      ];
+
+      // Master Logo Designs (1 to 12) - Consistent Naming Across All Listings
+      const ALL_LOGO_DESIGNS = [
+        { num: '1', name: 'Logo Design #1' },
+        { num: '2', name: 'Logo Design #2' },
+        { num: '3', name: 'Logo Design #3' },
+        { num: '4', name: 'Logo Design #4' },
+        { num: '5', name: 'Logo Design #5' },
+        { num: '6', name: 'Logo Design #6' },
+        { num: '7', name: 'Logo Design #7' },
+        { num: '8', name: 'Logo Design #8' },
+        { num: '9', name: 'Logo Design #9' },
+        { num: '10', name: 'Logo Design #10' },
+        { num: '11', name: 'Logo Design #11' },
+        { num: '12', name: 'Logo Design #12' }
+      ];
+      const LOGO_DESIGNS = ALL_LOGO_DESIGNS;
+
+      // Specific Allowed Logo Designs per Product & Color Listing
+      const PRODUCT_ALLOWED_LOGOS = {
+        'speckled-mug': {
+          'Black': ['1', '6', '8', '10', '12'],
+          'Blue': ['1', '6', '8', '10', '12'],
+          'Red': ['3', '8', '10']
+        },
+        'short-glass': {
+          'Black': ['1', '3', '5', '6', '12'],
+          'Blue': ['1', '3', '5', '6', '12'],
+          'Clear': ['1', '3', '5', '6', '12']
+        },
+        'mousepad': {
+          'Black': ['3', '6', '8', '12'],
+          'Blue': ['3', '6', '12'],
+          'White': ['1', '3', '5', '6', '12']
+        },
+        'pint-glass': {
+          'Black': ['1', '3', '5', '6', '12'],
+          'Blue': ['1', '3', '5', '6', '12'],
+          'Clear': ['1', '3', '5', '6', '12']
+        },
+        'padfolio': {
+          // Keep the same / all 12 logo designs
+          'Black': ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+          'Green': ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+          'Brown': ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
+        }
+      };
+
+      // Helper to retrieve allowed logo design objects for a product and color
+      function getLogosForProductColor(pid, color) {
+        const allowedNums = (PRODUCT_ALLOWED_LOGOS[pid] && PRODUCT_ALLOWED_LOGOS[pid][color])
+          ? PRODUCT_ALLOWED_LOGOS[pid][color]
+          : ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+        return ALL_LOGO_DESIGNS.filter(l => allowedNums.includes(l.num));
+      }
+
+      // State
+      let cart = [];
+      const productState = {};
+      let currentLightboxProduct = null;
+      let currentLightboxIndex = 0; // 0 = Specs photo, 1..N = Logo designs
+
+      const productGrid = document.getElementById('productGrid');
+      const cartTableBody = document.getElementById('cartTableBody');
+      const emptyCartRow = document.getElementById('emptyCartRow');
+      const cartTotalDisplay = document.getElementById('cartTotalDisplay');
+      const cartCountBadge = document.getElementById('cartCountBadge');
+      
+      // Order Confirmation Modal Elements
+      const confirmModal = document.getElementById('confirmModal');
+      const modalReceiptBody = document.getElementById('modalReceiptBody');
+      const triggerMailtoBtn = document.getElementById('triggerMailtoBtn');
+      const copyReceiptBtn = document.getElementById('copyReceiptBtn');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+
+      // Lightbox Elements
+      const lightboxModal = document.getElementById('lightboxModal');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxCaption = document.getElementById('lightboxCaption');
+      const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
+      const lightboxPrevBtn = document.getElementById('lightboxPrevBtn');
+      const lightboxNextBtn = document.getElementById('lightboxNextBtn');
+
+      // Executive Board Emails
+      const EXEC_BOARD_EMAILS = "cozeir@my.okcu.edu,jacob.beckham@my.okcu.edu,hbergmannbusby@my.okcu.edu,dadamez@my.okcu.edu,kristyn.hart@my.okcu.edu";
+
+      // Render Vendor Product Cards
+      PRODUCTS.forEach(p => {
+        const initialAllowedLogos = getLogosForProductColor(p.id, p.defaultColor);
+        const defaultLogoNum = initialAllowedLogos[0].num;
+
+        productState[p.id] = {
+          color: p.defaultColor,
+          logo: defaultLogoNum,
+          qty: 1
+        };
+
+        const card = document.createElement('div');
+        card.className = 'merch-card';
+        card.id = `card-${p.id}`;
+
+        const padfolioEngravingHTML = p.isEngraved ? `
+          <div style="background: rgba(108, 92, 231, 0.15); border: 1px solid rgba(179, 168, 255, 0.3); border-radius: 8px; padding: 0.75rem; margin: 0.75rem 0; font-size: 0.85rem; color: #d8dbff;">
+            <div style="margin-bottom: 0.4rem; color: #70c1ff; font-weight: 700;">Material: High Quality Vegan PU Leather</div>
+            <strong style="color: #faab1f;">Laser Engraving Custom Options:</strong><br />
+            All Padfolio logos are produced as either: <strong>Colorless Engraving</strong>, <strong>Silver Engraving</strong>, <strong>Golden Engraving</strong>, or <strong>Black Engraving</strong>.<br />
+            <em style="color: #a29bfe;">Specify your engraving color choice + custom name/text for the bottom right corner in the Custom Details box below!</em>
+          </div>
+        ` : '';
+
+        card.innerHTML = `
+          <!-- Main Product Display -->
+          <div class="merch-img-container" style="cursor: pointer;" onclick="openLightbox('${p.id}')" title="Click to view full screen zoomed image">
+            <span class="merch-badge">$${p.price}</span>
+            <span class="zoom-hint-badge">Click Photo to Zoom</span>
+            <img src="${p.folder}/${p.defaultColor}/${defaultLogoNum}.png" alt="${p.name}" id="img-${p.id}" onerror="this.onerror=null; this.src='${p.folder}/${p.defaultColor}/${defaultLogoNum}.jpg';" />
+          </div>
+
+          <!-- Specs & Details Quick Button -->
+          <button type="button" class="btn-view-specs" onclick="openDetailsSpecs('${p.id}')">
+            View ${p.name} Specs &amp; Details Sheet
+          </button>
+
+          <!-- Vendor Photo Gallery Strip -->
+          <div class="photo-gallery-wrapper">
+            <label>
+              <span>Design &amp; Details Photos:</span>
+              <span id="gallery-label-${p.id}" style="color: #faab1f; text-transform: none; font-size: 0.8rem;">${initialAllowedLogos[0].name}</span>
+            </label>
+            <div class="photo-gallery-strip" id="gallery-${p.id}">
+              <!-- Thumbnails generated dynamically -->
+            </div>
+          </div>
+
+          <div style="text-align: left;">
+            <h3 class="merch-title">${p.name}${p.material ? ` <span style="font-size: 0.85rem; font-weight: normal; color: #a29bfe; font-family: 'Lato', sans-serif;">(${p.material})</span>` : ''}</h3>
+            <div class="merch-price">$${p.price}.00</div>
+
+            ${padfolioEngravingHTML}
+
+            <div class="merch-options">
+              <!-- Color Selector -->
+              <div class="option-group">
+                <label>Select Color:</label>
+                <div class="color-swatches" id="colors-${p.id}">
+                  ${p.colors.map(c => `
+                    <button type="button" class="color-btn ${c.name === p.defaultColor ? 'active' : ''}" data-product="${p.id}" data-color="${c.name}">
+                      <span class="color-dot" style="background-color: ${c.colorCode};"></span>
+                      ${c.name}
+                    </button>
+                  `).join('')}
+                </div>
+              </div>
+
+              <!-- Logo Design Selector Dropdown -->
+              <div class="option-group">
+                <label>Select Logo Design:</label>
+                <select class="logo-select" id="logo-${p.id}" data-product="${p.id}">
+                  ${initialAllowedLogos.map(l => `<option value="${l.num}">${l.name}</option>`).join('')}
+                </select>
+              </div>
+
+              <!-- Quantity Selector -->
+              <div class="option-group" style="display: flex; justify-content: space-between; align-items: center;">
+                <label style="margin:0;">Quantity:</label>
+                <div class="qty-control">
+                  <button type="button" class="qty-btn" onclick="updateCardQty('${p.id}', -1)">-</button>
+                  <input type="text" class="qty-input" id="qty-${p.id}" value="1" readonly />
+                  <button type="button" class="qty-btn" onclick="updateCardQty('${p.id}', 1)">+</button>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="btn-add-cart" onclick="addToCart('${p.id}')">
+              Add to Order Request
+            </button>
+          </div>
+        `;
+
+        productGrid.appendChild(card);
+        renderGalleryStrip(p.id);
+      });
+
+      // Render Photo Gallery Strip for a product (Including Product Details Thumbnail)
+      function renderGalleryStrip(pid) {
+        const p = PRODUCTS.find(x => x.id === pid);
+        const state = productState[pid];
+        const galleryContainer = document.getElementById(`gallery-${pid}`);
+        galleryContainer.innerHTML = '';
+
+        // 1. Details Thumbnail First
+        const detailsThumb = document.createElement('div');
+        detailsThumb.className = 'photo-thumb details-thumb';
+        detailsThumb.title = `${p.name} Specifications & Details Sheet`;
+        detailsThumb.innerHTML = `
+          <img src="${p.detailsPhoto}" alt="${p.name} Details" />
+          <span class="thumb-number">SPECS</span>
+        `;
+        detailsThumb.addEventListener('click', () => {
+          openDetailsSpecs(pid);
+        });
+        galleryContainer.appendChild(detailsThumb);
+
+        // 2. Logo Design Thumbnails (Filtered by Allowed Logos for this Product & Color)
+        const allowedLogos = getLogosForProductColor(pid, state.color);
+        allowedLogos.forEach(design => {
+          const thumb = document.createElement('div');
+          thumb.className = `photo-thumb ${design.num === state.logo ? 'active' : ''}`;
+          thumb.dataset.product = pid;
+          thumb.dataset.logo = design.num;
+
+          const imgPath = `${p.folder}/${state.color}/${design.num}.png`;
+          const fallbackPath = `${p.folder}/${state.color}/${design.num}.jpg`;
+
+          thumb.innerHTML = `
+            <img src="${imgPath}" alt="${p.name} ${design.name}" onerror="this.onerror=null; this.src='${fallbackPath}';" />
+            <span class="thumb-number">#${design.num}</span>
+          `;
+
+          thumb.addEventListener('click', (e) => {
+            selectLogoDesign(pid, design.num);
+            openLightbox(pid, design.num);
+          });
+
+          galleryContainer.appendChild(thumb);
+        });
+      }
+
+      // Update logo dropdown options when color changes
+      function updateLogoDropdown(pid) {
+        const state = productState[pid];
+        const selectEl = document.getElementById(`logo-${pid}`);
+        if (!selectEl) return;
+        const allowed = getLogosForProductColor(pid, state.color);
+        selectEl.innerHTML = allowed.map(l => `<option value="${l.num}">${l.name}</option>`).join('');
+        selectEl.value = state.logo;
+      }
+
+      // Open Specs & Details directly in Lightbox
+      window.openDetailsSpecs = function(pid) {
+        currentLightboxProduct = pid;
+        currentLightboxIndex = 0; // Index 0 = Specs Sheet
+        updateLightboxView();
+        lightboxModal.classList.add('active');
+      };
+
+      // Select specific logo design visually or via dropdown
+      function selectLogoDesign(pid, logoNum) {
+        productState[pid].logo = logoNum;
+
+        // Update dropdown
+        const selectEl = document.getElementById(`logo-${pid}`);
+        if (selectEl) selectEl.value = logoNum;
+
+        // Update label
+        const logoObj = ALL_LOGO_DESIGNS.find(l => l.num === logoNum);
+        const labelEl = document.getElementById(`gallery-label-${pid}`);
+        if (labelEl && logoObj) labelEl.textContent = logoObj.name;
+
+        // Update thumbnail active states
+        const thumbs = document.querySelectorAll(`#gallery-${pid} .photo-thumb`);
+        thumbs.forEach(t => {
+          if (t.dataset.logo === logoNum) {
+            t.classList.add('active');
+            t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          } else {
+            t.classList.remove('active');
+          }
+        });
+
+        updateProductImage(pid);
+      }
+
+      // Color selector event listener
+      document.addEventListener('click', (e) => {
+        const colorBtn = e.target.closest('.color-btn');
+        if (colorBtn) {
+          const pid = colorBtn.dataset.product;
+          const colorName = colorBtn.dataset.color;
+          productState[pid].color = colorName;
+
+          // Check if current selected logo is allowed for the new color
+          const allowedLogos = getLogosForProductColor(pid, colorName);
+          const isLogoAllowed = allowedLogos.some(l => l.num === productState[pid].logo);
+          if (!isLogoAllowed) {
+            productState[pid].logo = allowedLogos[0].num;
+          }
+
+          // Update active button state
+          const swatches = document.querySelectorAll(`#colors-${pid} .color-btn`);
+          swatches.forEach(btn => btn.classList.remove('active'));
+          colorBtn.classList.add('active');
+
+          // Update logo dropdown options
+          updateLogoDropdown(pid);
+
+          // Update gallery label
+          const logoObj = ALL_LOGO_DESIGNS.find(l => l.num === productState[pid].logo);
+          const labelEl = document.getElementById(`gallery-label-${pid}`);
+          if (labelEl && logoObj) labelEl.textContent = logoObj.name;
+
+          // Re-render gallery thumbnails for new color
+          renderGalleryStrip(pid);
+          updateProductImage(pid);
+        }
+      });
+
+      // Logo dropdown event listener
+      document.addEventListener('change', (e) => {
+        if (e.target.classList.contains('logo-select')) {
+          const pid = e.target.dataset.product;
+          selectLogoDesign(pid, e.target.value);
+        }
+      });
+
+      // Update main featured image view
+      function updateProductImage(pid) {
+        const p = PRODUCTS.find(x => x.id === pid);
+        const state = productState[pid];
+        const imgEl = document.getElementById(`img-${pid}`);
+        const pngPath = `${p.folder}/${state.color}/${state.logo}.png`;
+        const jpgPath = `${p.folder}/${state.color}/${state.logo}.jpg`;
+
+        imgEl.src = pngPath;
+        imgEl.onerror = () => {
+          imgEl.onerror = null;
+          imgEl.src = jpgPath;
+        };
+      }
+
+      // --- LIGHTBOX ZOOMED GALLERY PHOTO VIEWER LOGIC ---
+      window.openLightbox = function(pid, specifiedLogoNum = null) {
+        currentLightboxProduct = pid;
+        const state = productState[pid];
+        const allowedLogos = getLogosForProductColor(pid, state.color);
+        const logoNum = specifiedLogoNum || state.logo;
+        
+        const logoIdx = allowedLogos.findIndex(l => l.num === logoNum);
+        currentLightboxIndex = logoIdx >= 0 ? logoIdx + 1 : 1; // 0 is Specs, 1..N are Logos
+
+        updateLightboxView();
+        lightboxModal.classList.add('active');
+      };
+
+      function updateLightboxView() {
+        if (!currentLightboxProduct) return;
+        const p = PRODUCTS.find(x => x.id === currentLightboxProduct);
+        const state = productState[currentLightboxProduct];
+        const allowedLogos = getLogosForProductColor(currentLightboxProduct, state.color);
+
+        // If Index 0 -> Display Details & Specs Sheet
+        if (currentLightboxIndex === 0) {
+          lightboxImg.src = p.detailsPhoto;
+          lightboxCaption.innerHTML = `<strong>${p.name}</strong> &mdash; Official Product Specifications &amp; Details Sheet`;
+          return;
+        }
+
+        // Clamp index if out of bounds
+        if (currentLightboxIndex > allowedLogos.length) {
+          currentLightboxIndex = 1;
+        }
+
+        // Display Logo Design Photo
+        const logoObj = allowedLogos[currentLightboxIndex - 1];
+        selectLogoDesign(currentLightboxProduct, logoObj.num);
+
+        const pngPath = `${p.folder}/${state.color}/${logoObj.num}.png`;
+        const jpgPath = `${p.folder}/${state.color}/${logoObj.num}.jpg`;
+
+        lightboxImg.src = pngPath;
+        lightboxImg.onerror = () => {
+          lightboxImg.onerror = null;
+          lightboxImg.src = jpgPath;
+        };
+
+        lightboxCaption.innerHTML = `<strong>${p.name}</strong> (${state.color}) &mdash; ${logoObj.name} <span style="opacity: 0.7; font-size: 0.85rem;">[${currentLightboxIndex} of ${allowedLogos.length}]</span>`;
+      }
+
+      function closeLightbox() {
+        lightboxModal.classList.remove('active');
+      }
+
+      function nextLightboxPhoto() {
+        if (!currentLightboxProduct) return;
+        const state = productState[currentLightboxProduct];
+        const allowedLogos = getLogosForProductColor(currentLightboxProduct, state.color);
+        const maxIndex = allowedLogos.length; // 0..maxIndex total
+        currentLightboxIndex = (currentLightboxIndex + 1) % (maxIndex + 1);
+        updateLightboxView();
+      }
+
+      function prevLightboxPhoto() {
+        if (!currentLightboxProduct) return;
+        const state = productState[currentLightboxProduct];
+        const allowedLogos = getLogosForProductColor(currentLightboxProduct, state.color);
+        const maxIndex = allowedLogos.length;
+        currentLightboxIndex = (currentLightboxIndex - 1 + (maxIndex + 1)) % (maxIndex + 1);
+        updateLightboxView();
+      }
+
+      lightboxCloseBtn.addEventListener('click', closeLightbox);
+      lightboxNextBtn.addEventListener('click', nextLightboxPhoto);
+      lightboxPrevBtn.addEventListener('click', prevLightboxPhoto);
+
+      lightboxModal.addEventListener('click', (e) => {
+        if (e.target === lightboxModal) {
+          closeLightbox();
+        }
+      });
+
+      // Keyboard navigation for Lightbox
+      document.addEventListener('keydown', (e) => {
+        if (!lightboxModal.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextLightboxPhoto();
+        if (e.key === 'ArrowLeft') prevLightboxPhoto();
+      });
+
+
+      // Quantity helper
+      window.updateCardQty = function(pid, delta) {
+        let current = productState[pid].qty;
+        current += delta;
+        if (current < 1) current = 1;
+        productState[pid].qty = current;
+        document.getElementById(`qty-${pid}`).value = current;
+      };
+
+      // Add item to cart
+      window.addToCart = function(pid) {
+        const p = PRODUCTS.find(x => x.id === pid);
+        const state = productState[pid];
+        const logoObj = LOGO_DESIGNS.find(l => l.num === state.logo);
+
+        const cartItemId = `${pid}-${state.color}-${state.logo}`;
+        const existing = cart.find(item => item.cartItemId === cartItemId);
+
+        if (existing) {
+          existing.qty += state.qty;
+        } else {
+          cart.push({
+            cartItemId,
+            productId: pid,
+            name: p.name,
+            price: p.price,
+            color: state.color,
+            logoNum: state.logo,
+            logoName: logoObj.name,
+            qty: state.qty,
+            image: `${p.folder}/${state.color}/${state.logo}.png`
+          });
+        }
+
+        // Reset qty on card back to 1
+        productState[pid].qty = 1;
+        document.getElementById(`qty-${pid}`).value = 1;
+
+        renderCart();
+
+        // Smooth scroll to order section
+        document.getElementById('orderSection').scrollIntoView({ behavior: 'smooth' });
+      };
+
+      // Remove from cart
+      window.removeFromCart = function(cartItemId) {
+        cart = cart.filter(item => item.cartItemId !== cartItemId);
+        renderCart();
+      };
+
+      // Render Cart
+      function renderCart() {
+        if (cart.length === 0) {
+          cartTableBody.innerHTML = '';
+          cartTableBody.appendChild(emptyCartRow);
+          cartTotalDisplay.textContent = '$0.00';
+          cartCountBadge.textContent = '0 Items Selected';
+          return;
+        }
+
+        cartTableBody.innerHTML = '';
+        let total = 0;
+        let itemCount = 0;
+
+        cart.forEach(item => {
+          const subtotal = item.price * item.qty;
+          total += subtotal;
+          itemCount += item.qty;
+
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td style="font-weight: 600; color: #fff;">${item.name}</td>
+            <td><span class="color-dot" style="vertical-align: middle; margin-right: 4px; background: ${getColorHex(item.color)};"></span>${item.color}</td>
+            <td style="font-size: 0.88rem; color: #b3a8ff;">${item.logoName}</td>
+            <td>$${item.price}.00</td>
+            <td>${item.qty}</td>
+            <td style="font-weight: 700; color: #faab1f;">$${subtotal}.00</td>
+            <td>
+              <button class="btn-remove-item" onclick="removeFromCart('${item.cartItemId}')" title="Remove Item">&times;</button>
+            </td>
+          `;
+          cartTableBody.appendChild(tr);
+        });
+
+        cartTotalDisplay.textContent = `$${total}.00`;
+        cartCountBadge.textContent = `${itemCount} Item${itemCount > 1 ? 's' : ''} Selected`;
+      }
+
+      function getColorHex(cName) {
+        if (cName === 'Blue') return '#1e3a8a';
+        if (cName === 'Black') return '#18181b';
+        if (cName === 'Red') return '#991b1b';
+        if (cName === 'Green') return '#14532d';
+        if (cName === 'Brown') return '#78350f';
+        if (cName === 'White') return '#f8fafc';
+        return '#cbd5e1'; // Clear
+      }
+
+      // Handle Order Request Submission
+      const form = document.getElementById('merchOrderForm');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        if (cart.length === 0) {
+          alert('Please select at least one merchandise item to submit an order request.');
+          return;
+        }
+
+        const name = document.getElementById('reqName').value.trim();
+        const email = document.getElementById('reqEmail').value.trim();
+        const phone = document.getElementById('reqPhone').value.trim();
+        const status = document.getElementById('reqStatus').value;
+        const delivery = document.getElementById('reqDelivery').value;
+        const padfolioEngraving = document.getElementById('padfolioEngravingColor').value;
+        const notes = document.getElementById('reqNotes').value.trim();
+        const orderDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+        const orderId = 'IPLS-2026-' + Math.floor(1000 + Math.random() * 9000);
+
+        let grandTotal = 0;
+        let itemSummaryLinesText = '';
+        let itemSummaryHTML = '<ul style="padding-left: 1.25rem; margin: 0.5rem 0;">';
+
+        cart.forEach((item, index) => {
+          const sub = item.price * item.qty;
+          grandTotal += sub;
+          itemSummaryLinesText += `${index + 1}. ${item.name} | Color: ${item.color} | Logo: ${item.logoName} | Qty: ${item.qty} | Price: $${item.price} ea | Subtotal: $${sub}\n`;
+          itemSummaryHTML += `<li><strong>${item.name}</strong> (${item.color}, ${item.logoName}) &mdash; Qty: ${item.qty} &times; $${item.price} = <span style="color: #faab1f; font-weight: bold;">$${sub}.00</span></li>`;
+        });
+        itemSummaryHTML += '</ul>';
+
+        // Construct HTML Receipt Body for Modal
+        modalReceiptBody.innerHTML = `
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(179,168,255,0.2); border-radius: 0.75rem; padding: 1.25rem; margin-bottom: 1.25rem;">
+            <p style="margin: 0 0 0.5rem 0; font-size: 0.9rem; color: #a29bfe;">Order Reference #: <strong>${orderId}</strong> | Date: ${orderDate}</p>
+            <h4 style="color: #fff; margin: 0 0 0.5rem 0;">Purchaser / Offeror Information:</h4>
+            <p style="margin: 0; font-size: 0.95rem; color: #d8dbff;">
+              <strong>Name:</strong> ${name}<br />
+              <strong>Email:</strong> ${email}<br />
+              <strong>Phone:</strong> ${phone}<br />
+              <strong>Status:</strong> ${status}<br />
+              <strong>Pickup/Delivery:</strong> ${delivery}<br />
+              <strong>Padfolio Engraving Color Choice:</strong> ${padfolioEngraving}<br />
+              <strong>Custom Details &amp; Bottom-Right Corner Text:</strong> ${notes || 'None Specified'}
+            </p>
+          </div>
+
+          <h4 style="color: #b3a8ff; margin: 1rem 0 0.5rem 0;">Merchandise Items Requested:</h4>
+          ${itemSummaryHTML}
+          <p style="font-size: 1.25rem; font-weight: 700; color: #faab1f; text-align: right; margin-top: 1rem;">
+            Total Order Price: $${grandTotal}.00
+          </p>
+
+          <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 1.25rem 0;" />
+
+          <div style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.6;">
+            <p style="margin-bottom: 0.75rem; background: rgba(108, 92, 231, 0.2); padding: 0.75rem; border-left: 3px solid #6c5ce7; border-radius: 4px;">
+              <strong>Fulfillment Notice:</strong> Custom IPLS merchandise orders are crafted in batches and may take up to <strong>30 to 45 days</strong> to be fulfilled/received.
+            </p>
+
+            <p style="margin-bottom: 0.75rem;">
+              <strong>Vendor &amp; Custom Order Terms:</strong> Custom manufactured items are individually crafted. Padfolio logos are produced as either Colorless, Silver, Golden, or Black engraving as specified. Digital mockups serve as representations; minor color tone or artwork alignment variations may occur. If your item arrives defective or materially different from what was ordered, we will promptly replace or refund your item.
+            </p>
+
+            <p style="margin-bottom: 0.75rem;">
+              <strong>Unfulfillable Order Guarantee:</strong> If IPLS is unable to fulfill your order request for any reason (e.g., minimum batch counts or vendor availability), you will receive a 100% full refund.
+            </p>
+
+            <p style="margin-bottom: 0.75rem;">
+              <strong>Payment Completion:</strong> To fully complete your merchandise order, please submit the total invoice price ($${grandTotal}.00) via Venmo to Treasurer <strong>Danyelle Adamez</strong> (<a href="https://venmo.com/u/Danyelle-Adamez" target="_blank" rel="noopener noreferrer" style="color: #70c1ff; font-weight: bold; text-decoration: underline;">@Danyelle-Adamez</a>).
+            </p>
+
+            <div style="text-align: center; margin-top: 1.25rem; padding: 1.25rem; background: rgba(0, 140, 255, 0.08); border-radius: 12px; border: 1px solid rgba(0, 140, 255, 0.3);">
+              <p style="margin: 0 0 0.75rem 0; font-weight: 700; color: #faab1f; font-size: 1.05rem;">Scan QR Code to Pay via Venmo:</p>
+              <a href="https://venmo.com/u/Danyelle-Adamez" target="_blank" rel="noopener noreferrer" style="display: inline-block;">
+                <img src="assets/images/qr/venmo-qr.png" alt="Venmo QR Code - @Danyelle-Adamez" style="max-width: 220px; width: 100%; border-radius: 12px; border: 3px solid #fff; box-shadow: 0 4px 20px rgba(0,0,0,0.5);" />
+              </a>
+              <p style="margin: 0.75rem 0 0 0; font-size: 1rem; color: #e2e8f0;">
+                Treasurer Venmo Handle: <a href="https://venmo.com/u/Danyelle-Adamez" target="_blank" rel="noopener noreferrer" class="venmo-badge" style="margin-left: 0.25rem;">@Danyelle-Adamez</a><br />
+                <span style="font-size: 0.85rem; color: #a29bfe; display: block; margin-top: 0.4rem;">(Please include your Order Reference <strong>#${orderId}</strong> in the Venmo payment note)</span>
+              </p>
+            </div>
+          </div>
+        `;
+
+        // Build Email Text
+        const emailSubject = encodeURIComponent(`[IPLS Merch Order Request] Order ${orderId} - ${name}`);
+        const fullEmailText = 
+`==================================================
+IPLS MERCHANDISE SALE OFFER & ORDER REQUEST
+==================================================
+Order Reference #: ${orderId}
+Submitted Date: ${orderDate}
+
+PURCHASER / OFFEROR DETAILS:
+--------------------------------------------------
+Full Name: ${name}
+Email Address: ${email}
+Phone Number: ${phone}
+Affiliation: ${status}
+Pickup/Fulfillment Preference: ${delivery}
+Padfolio Engraving Color Choice: ${padfolioEngraving}
+Custom Details & Bottom-Right Corner Text: ${notes || 'None Specified'}
+
+ITEMS ORDERED:
+--------------------------------------------------
+${itemSummaryLinesText}
+--------------------------------------------------
+TOTAL INVOICE AMOUNT: $${grandTotal}.00
+
+FULFILLMENT & ORDER DISCLOSURES:
+--------------------------------------------------
+1. Estimated Fulfillment Timeframe: Custom IPLS merchandise orders are produced in batches and may take up to 30 to 45 days to be fulfilled and received.
+2. Custom Order & Padfolio Engraving Terms: All Padfolio logos are engraved as specified (Colorless, Silver, Golden, or Black engraving) with custom text for the bottom right corner. Digital preview mockups are representations; minor variations in color or graphic placement may occur. If an item arrives defective or materially different, IPLS will replace or refund it.
+3. Unfulfillable Order Refund Guarantee: In the event that IPLS is unable to fulfill your merchandise order request for any reason, a 100% full refund will be issued.
+4. Payment Instructions: To fully complete your merchandise order request, please submit your payment for the total invoice amount ($${grandTotal}.00) to Treasurer Danyelle Adamez via Venmo:
+Venmo Handle: @Danyelle-Adamez (https://venmo.com/u/Danyelle-Adamez)
+* Please include Order Reference #${orderId} in your Venmo payment note!
+
+Executive Board Recipients Included:
+- cozeir@my.okcu.edu
+- jacob.beckham@my.okcu.edu
+- hbergmannbusby@my.okcu.edu
+- dadamez@my.okcu.edu
+- kristyn.hart@my.okcu.edu
+
+Thank you for supporting the Intellectual Property Law Society at OCU Law!
+==================================================`;
+
+        // Build concise, webmail-friendly mailto URL to prevent URL length errors in Microsoft Outlook / O365
+        const conciseEmailText = 
+`IPLS MERCHANDISE ORDER REQUEST
+Order Reference #: ${orderId} | Date: ${orderDate}
+
+Purchaser: ${name} (${email} | ${phone})
+Status: ${status} | Pickup/Delivery: ${delivery}
+Padfolio Engraving Color: ${padfolioEngraving}
+Custom Details / Engraving Text: ${notes || 'None Specified'}
+
+ITEMS REQUESTED:
+${itemSummaryLinesText}
+TOTAL PRICE: $${grandTotal}.00
+
+Payment to Treasurer's Venmo: @Danyelle-Adamez (https://venmo.com/u/Danyelle-Adamez) [Include Order Ref #${orderId}]
+Board Recipients: cozeir@my.okcu.edu, jacob.beckham@my.okcu.edu, hbergmannbusby@my.okcu.edu, dadamez@my.okcu.edu, kristyn.hart@my.okcu.edu`;
+
+        const mailtoRecipients = EXEC_BOARD_EMAILS;
+        const mailtoCC = encodeURIComponent(email);
+        const mailtoUrl = `mailto:${mailtoRecipients}?cc=${mailtoCC}&subject=${emailSubject}&body=${encodeURIComponent(conciseEmailText)}`;
+        
+        triggerMailtoBtn.href = mailtoUrl;
+
+        // Copy button copies the full detailed text to clipboard
+        copyReceiptBtn.onclick = () => {
+          navigator.clipboard.writeText(fullEmailText).then(() => {
+            alert('Full order confirmation and notification email text copied to clipboard!');
+          }).catch(() => {
+            alert('Failed to copy automatically. Please copy the text directly.');
+          });
+        };
+
+        // Show Modal Receipt cleanly without breaking browser page
+        confirmModal.classList.add('active');
+      });
+
+      // Modal Close logic
+      closeModalBtn.addEventListener('click', () => {
+        confirmModal.classList.remove('active');
+      });
+
+      confirmModal.addEventListener('click', (e) => {
+        if (e.target === confirmModal) {
+          confirmModal.classList.remove('active');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
