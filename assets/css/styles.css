@@ -2228,3 +2228,38 @@ body {
     flex-wrap: wrap;
   }
 }
+
+
+/* ============================================================
+   Mobile background correction (2026-10)
+   iOS Safari may size fixed BODY backgrounds against the full,
+   very tall document instead of the screen. Render the original
+   Cosmic Highways artwork in a viewport-fixed layer on mobile.
+   Desktop background and all content styles stay unchanged.
+   ============================================================ */
+@media (max-width: 768px) {
+  body {
+    /* Keep the fallback color while preventing the page-sized image
+       from being painted a second time. */
+    background: #070a16;
+    background-attachment: scroll;
+    background-blend-mode: normal;
+    animation: none;
+    isolation: isolate;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(5, 10, 25, 0.85), rgba(5, 10, 25, 0.85)),
+      url("../images/backgrounds/Cosmic-Highways.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: lighten;
+  }
+}
