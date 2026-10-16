@@ -14,6 +14,57 @@
     href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Cormorant+Garamond:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet">
   <script src="assets/js/main.js" defer></script>
+  <!-- Moot Court page-only narrow-screen refinements. Desktop styles unchanged. -->
+  <style>
+    @media (max-width: 768px) {
+      /* Flex children should not expand the entire page on narrow phones. */
+      main.layout > section {
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+      }
+
+      .moot-spotlight-grid,
+      .timeline-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .moot-support-banner,
+      .moot-spotlight-card,
+      .competition-full-card {
+        box-sizing: border-box;
+        min-width: 0;
+        max-width: 100%;
+      }
+
+      .moot-support-banner,
+      .competition-full-card {
+        padding: clamp(1.1rem, 4vw, 1.5rem);
+      }
+
+      .competition-header > div {
+        min-width: 0;
+        max-width: 100%;
+      }
+
+      .competition-header h3,
+      .faq-summary,
+      .resource-pill,
+      .moot-competition-chip,
+      .moot-support-actions > a {
+        overflow-wrap: anywhere;
+      }
+
+      .resource-pill,
+      .moot-competition-chip,
+      .moot-support-actions > a {
+        box-sizing: border-box;
+        max-width: 100%;
+        white-space: normal;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -72,7 +123,7 @@
     </section>
 
     <!-- Student Competitor Spotlights Section -->
-    <section class="fade-in" style="margin-bottom: 3.5rem;">
+    <section style="margin-bottom: 3.5rem;">
       <h2 style="font-family: 'Space Grotesk', sans-serif; color: #fff; font-size: 1.85rem; margin-bottom: 0.5rem; text-align: left; border-bottom: 2px solid rgba(108, 92, 231, 0.4); padding-bottom: 0.5rem;">
         Student Highlights &amp; Competitor Spotlights
       </h2>
@@ -154,7 +205,7 @@
     </section>
 
     <!-- Featured Competitions Breakdown -->
-    <section class="fade-in" style="margin-bottom: 3.5rem;">
+    <section style="margin-bottom: 3.5rem;">
       <h2 style="font-family: 'Space Grotesk', sans-serif; color: #fff; font-size: 1.85rem; margin-bottom: 0.5rem; text-align: left; border-bottom: 2px solid rgba(108, 92, 231, 0.4); padding-bottom: 0.5rem;">
         Featured IP Moot Court Competitions
       </h2>
