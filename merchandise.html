@@ -14,9 +14,200 @@
     href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Cormorant+Garamond:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet">
   <script src="assets/js/main.js" defer></script>
+
+  <!-- Page-specific adjustments: mobile merchandise only. No desktop or cart JS changes. -->
+  <style id="merchandise-mobile-layout">
+    @media (max-width: 700px) {
+      /* A flex child's min-content width previously enlarged the entire page. */
+      body.merchandise-page .layout {
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 0;
+        max-width: 100% !important;
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+      }
+      body.merchandise-page .layout > * {
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+      }
+      body.merchandise-page .merch-info-banner {
+        padding: 1rem;
+        overflow-wrap: anywhere;
+      }
+      body.merchandise-page .merch-info-banner ul {
+        margin-left: 0;
+        padding-left: 1.2rem;
+      }
+      body.merchandise-page .layout section > h2 {
+        overflow-wrap: anywhere;
+      }
+
+      /* One product per row; keep horizontally scrolling thumbnails inside the card. */
+      body.merchandise-page .merch-grid {
+        width: 100%;
+        min-width: 0;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.25rem;
+        margin: 1rem 0;
+      }
+      body.merchandise-page .merch-card {
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        padding: 1rem;
+      }
+      body.merchandise-page .merch-card > *,
+      body.merchandise-page .merch-options,
+      body.merchandise-page .merch-options .option-group,
+      body.merchandise-page .photo-gallery-wrapper {
+        box-sizing: border-box;
+        min-width: 0;
+        max-width: 100%;
+      }
+      body.merchandise-page .photo-gallery-wrapper label {
+        flex-wrap: wrap;
+        gap: .25rem .75rem;
+      }
+      body.merchandise-page .photo-gallery-strip {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      body.merchandise-page .merch-img-container {
+        box-sizing: border-box;
+        max-width: 100%;
+        height: clamp(190px, 53vw, 240px);
+      }
+      body.merchandise-page .merch-title,
+      body.merchandise-page .btn-view-specs,
+      body.merchandise-page .btn-add-cart {
+        overflow-wrap: anywhere;
+      }
+      body.merchandise-page .logo-select,
+      body.merchandise-page .btn-view-specs,
+      body.merchandise-page .btn-add-cart {
+        box-sizing: border-box;
+        max-width: 100%;
+      }
+
+      /* Order panel remains phone-width; only the wide table may scroll sideways. */
+      body.merchandise-page .merch-order-section {
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        margin-top: 1.25rem;
+        padding: 1rem;
+      }
+      body.merchandise-page .merch-order-section > h2 {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: .75rem;
+        font-size: clamp(1.25rem, 5vw, 1.65rem) !important;
+        overflow-wrap: anywhere;
+      }
+      body.merchandise-page #cartCountBadge {
+        box-sizing: border-box;
+        max-width: 100%;
+      }
+      body.merchandise-page .cart-table-wrapper {
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-inline: contain;
+      }
+      body.merchandise-page .cart-table {
+        width: max-content;
+        min-width: 100%;
+      }
+      body.merchandise-page .cart-table th,
+      body.merchandise-page .cart-table td {
+        white-space: nowrap;
+        padding: .75rem;
+      }
+      body.merchandise-page .cart-table:has(#emptyCartRow) {
+        width: 100%;
+        table-layout: fixed;
+      }
+      body.merchandise-page .cart-table:has(#emptyCartRow) thead {
+        display: none;
+      }
+      body.merchandise-page #emptyCartRow td {
+        min-width: 0;
+        white-space: normal;
+      }
+      body.merchandise-page .form-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 1rem;
+      }
+      body.merchandise-page .form-group {
+        min-width: 0;
+        max-width: 100%;
+      }
+      body.merchandise-page .form-group input,
+      body.merchandise-page .form-group select,
+      body.merchandise-page .form-group textarea {
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+      }
+      body.merchandise-page .terms-box,
+      body.merchandise-page .merch-order-section > div {
+        overflow-wrap: anywhere;
+      }
+      body.merchandise-page #merchOrderForm .btn {
+        box-sizing: border-box;
+        max-width: 100%;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        padding: .85rem 1.25rem !important;
+      }
+
+      /* Image zoom and receipt dialogs stay usable on mobile. */
+      body.merchandise-page .modal-overlay,
+      body.merchandise-page .lightbox-overlay {
+        box-sizing: border-box;
+        max-width: 100vw;
+        padding: .75rem;
+      }
+      body.merchandise-page .modal-content,
+      body.merchandise-page .lightbox-container {
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+      }
+      body.merchandise-page .modal-content {
+        padding: 1rem;
+        overflow-wrap: anywhere;
+      }
+      body.merchandise-page .modal-header {
+        min-width: 0;
+        gap: .5rem;
+      }
+      body.merchandise-page .modal-header h2 {
+        font-size: 1.25rem;
+        overflow-wrap: anywhere;
+      }
+      body.merchandise-page .lightbox-img {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body class="merchandise-page">
   <!-- Top Navigation -->
   <nav class="top-nav">
     <div class="nav-container">
