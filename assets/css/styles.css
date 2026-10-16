@@ -2263,3 +2263,28 @@ body {
     background-blend-mode: lighten;
   }
 }
+
+/* ============================================================
+   Desktop default visual scale (2026-10)
+   Match the preferred Firefox 90% desktop view site-wide.
+   Applies only to desktop-width screens; phone/tablet layouts
+   and the mobile background correction remain unchanged.
+   This changes the website rendering, not the browser zoom UI.
+   ============================================================ */
+@media screen and (min-width: 1024px) {
+  html {
+    zoom: 90%;
+  }
+}
+
+/* At narrower desktop widths, let long titles wrap naturally. */
+@media screen and (min-width: 1024px) and (max-width: 1399px) {
+  .card h1 { white-space: normal; }
+}
+
+/* Keep the desktop navigation usable in smaller laptop windows. */
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+  .club-banner h1 { white-space: normal; }
+  .nav-links { gap: 1rem; }
+  .nav-links a { font-size: 0.8rem; letter-spacing: 1.5px; }
+}
