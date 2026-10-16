@@ -2132,3 +2132,99 @@ body {
     text-align: left;
   }
 }
+/* ============================================================
+   Mobile layout corrections (2026-10)
+   Prevent off-screen headings and narrow-screen overflow while
+   preserving the existing desktop design and visual theme.
+   ============================================================ */
+@media (max-width: 768px) {
+  /* Keep all box padding inside the available mobile width. */
+  .layout,
+  .layout .card,
+  .club-banner .container,
+  .board-grid,
+  .board-card,
+  .engage-section,
+  .engage-container,
+  .engage-container > *,
+  .footer-grid,
+  .advisor-grid,
+  .advisor-grid > * {
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* Previously forced onto one line even at phone widths. */
+  .club-banner h1 {
+    white-space: normal;
+    font-size: clamp(1.9rem, 7.5vw, 2.6rem);
+    line-height: 1.13;
+    letter-spacing: 0.04em;
+    overflow-wrap: normal;
+    padding: 0 0.5rem;
+  }
+
+  .club-banner h2 {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(0.75rem, 3.2vw, 1.1rem);
+    letter-spacing: 0.14em;
+    line-height: 1.6;
+    padding: 0 1rem;
+    margin-top: 1rem;
+  }
+
+  /* Decorative dashes previously hung outside the mobile heading. */
+  .club-banner h2::before,
+  .club-banner h2::after {
+    display: none;
+  }
+
+  .layout .card {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .card h1 {
+    white-space: normal;
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+
+  .card h2,
+  .board-card h3,
+  .board-card .role,
+  .board-card .mailto {
+    overflow-wrap: anywhere;
+  }
+
+  .board-grid,
+  .engage-container,
+  .footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Override the homepage's inline 300px-minimum advisor grid. */
+  .advisor-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  /* Override the inline 'white-space: nowrap' on the legal citation. */
+  .advisor-grid .board-card .role {
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+  }
+
+  .board-card .chip {
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .card-contact-row {
+    flex-wrap: wrap;
+  }
+}
