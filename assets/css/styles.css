@@ -2288,3 +2288,182 @@ body {
   .nav-links { gap: 1rem; }
   .nav-links a { font-size: 0.8rem; letter-spacing: 1.5px; }
 }
+
+/* ==========================================================================
+   Donation & Support Page Dedicated Styles
+   ========================================================================== */
+
+/* Impact Grid */
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0 2rem 0;
+}
+
+.impact-card {
+  background: rgba(13, 18, 36, 0.75);
+  border: 1px solid rgba(162, 155, 254, 0.25);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.impact-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(250, 171, 31, 0.5);
+  box-shadow: 0 10px 25px rgba(108, 92, 231, 0.25);
+}
+
+.impact-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  color: #faab1f;
+  font-size: 1.25rem;
+  margin: 0 0 0.6rem 0;
+}
+
+.impact-card p {
+  color: #c0c6f0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin: 0 0 0.75rem 0;
+}
+
+.impact-card ul {
+  padding-left: 1.2rem;
+  margin: 0;
+  color: #d8dbff;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.impact-card li {
+  margin-bottom: 0.4rem;
+}
+
+/* Giving Tiers Grid */
+.donation-tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.tier-btn {
+  background: rgba(10, 15, 30, 0.75);
+  border: 1.5px solid rgba(162, 155, 254, 0.3);
+  border-radius: 12px;
+  padding: 0.85rem 0.6rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  transition: all 0.2s ease;
+  color: #fff;
+  user-select: none;
+}
+
+.tier-btn:hover {
+  background: rgba(108, 92, 231, 0.25);
+  border-color: #a29bfe;
+  transform: translateY(-2px);
+}
+
+.tier-btn.active {
+  background: linear-gradient(135deg, rgba(108, 92, 231, 0.6), rgba(72, 52, 212, 0.75));
+  border-color: #faab1f;
+  box-shadow: 0 0 15px rgba(250, 171, 31, 0.35);
+  transform: translateY(-2px);
+}
+
+.tier-amount {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #faab1f;
+}
+
+.tier-btn.active .tier-amount {
+  color: #ffd6ff;
+}
+
+.tier-desc {
+  font-size: 0.82rem;
+  color: #c0c6f0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.custom-amount-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.currency-prefix {
+  position: absolute;
+  left: 0.85rem;
+  color: #a29bfe;
+  font-weight: 700;
+  font-size: 1.05rem;
+  pointer-events: none;
+}
+
+.custom-amount-wrap input {
+  padding-left: 1.85rem !important;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #faab1f !important;
+}
+
+/* Donation page: phone-safe layout and controls. */
+@media (max-width: 768px) {
+  .impact-grid { grid-template-columns: minmax(0,1fr); }
+  .impact-card, .donation-tiers-grid, .form-grid { min-width: 0; max-width: 100%; }
+  .donation-tiers-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  #donationForm select, #donationForm input, #donationForm textarea { max-width:100%; box-sizing:border-box; }
+  #donationConfirmModal .modal-content { width: 100%; max-width: 100%; box-sizing: border-box; padding: 1.15rem; }
+  #donationConfirmModal .modal-header h2 { font-size: clamp(1.1rem, 4.6vw, 1.4rem); overflow-wrap:anywhere; }
+  #donationConfirmModal .modal-close { flex: 0 0 auto; margin-left:0.5rem; }
+}
+@media (max-width: 360px) {
+  .donation-tiers-grid { grid-template-columns: minmax(0,1fr); }
+}
+/* Fit the eighth desktop nav link without changing the mobile menu. */
+@media (min-width: 769px) and (max-width: 1199px) {
+  .nav-links { gap: 0.7rem; }
+  .nav-links a { font-size: 0.78rem; letter-spacing: 0.065em; white-space:nowrap; }
+}
+@media (min-width: 1200px) {
+  .nav-links { gap: 1.05rem; }
+  .nav-links a { white-space: nowrap; }
+}
+
+/* Donation navigation: accommodate eighth link on tablet-sized screens.
+   Desktop 1024px+ and established phone navigation remain unchanged. */
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .hamburger { display: flex; }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 10, 25, 0.95);
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    gap: 1.5rem;
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 0.4s ease-in-out;
+  }
+  .nav-links.active { clip-path: inset(0 0 0 0); }
+  .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .hamburger.active span:nth-child(2) { opacity: 0; }
+  .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+}
